@@ -1,5 +1,112 @@
-class Main
-{
+Git & Github
+==========
 
-//main method
-}
+=>What is GitHub?
+-Github is cloud platform which is used to store developers project source code at one place using repositories(repos) concept.
+
+=>Git- to communicate with Github repos from our machine we use "Git" as client software.
+
+=>in Github, we can create repos to store our project source code. All team members/developers can connect to github repo for code integration.
+
+=>Using Github repository we can monitor/track all code changes.
+
+		-Who modified.
+		-When modified.
+		-What modified.
+		-Why modified.
+
+=> Bitbucket, Gitlab is also similler cloud platforms like GitHub.
+
+
+===================
+Enviornment setup
+===================
+
+1. Create account on www.github.com (free of cost) 
+
+2.  Download and install 'Git client' software in your system.
+
+	URL:  https://git-scm.com/install/windows
+
+	command to check installed git version in your system:  git --version
+
+3) Open Git bash and configure your name and your email using below commands
+
+	git config --global user.name "your-name"
+
+	git config --global user.email "your-email"
+
+Note: Configuring name and email is just one time process in git bash.
+
+
+==========================
+What is GitHub repository?
+==========================
+
+=>repository is a place where we can store project source code/files.
+
+=> For every project one seperate Github repo will be created.
+
+=>we can have 2 types of repositories.
+
+1. public repo. (anybody can see your repo but account owner can choose who can commit(make code changes))
+
+2. private repo. (account owner only can see a repo details and choose whocan commit)
+
+
+@@Project Github Repo URL: https://github.com/dnyaneshrt/Github_workshop_6th_June
+													 https://github.com/dnyaneshrt/Github_workshop_6th_June.git
+
+Note: In real-time DevOps team is responsible to create git repos required for the project.
+
+=> project members will connect with git repo by using above URL.
+
+
+=================
+Git Architecture
+=================
+
+1)  Working Tree.
+
+2)  Staging Area.
+
+3) Local Repo.
+
+4) Central Repo.
+
+
+#Working Tree	:- this is your current workspace where project files are created, edited and deleted. this code directly is not eligible to commit.
+
+#Staging area	:- it is the middle layer beween your working tree directory and local repo. it represents which files are eligible to commit.
+
+#Local Repo :-	The place where your commits are permantly stored on your local machine. For each commit one unique commit is will be generated.
+
+#Central Repo :- Hosted on Github.com and used for collaboration among multiple developers.
+
+
+
+working tree  ---->  Staging Area --------->  Local repo -----------> Centra Repo
+
+
+================
+Git Commands
+================
+
+#git init : To initalize new git repository.
+
+	$ git init
+
+#	git status: Display working tree status. (staged/unstaged)
+
+	$	git status
+
+# git add: Add files to staging area. (move files from working tree to staging area)
+
+	$	git add <file-name>
+
+# git commit: commit staged files at local repo.
+
+	$ git commit -m "commit message"
+
+# git push: publish local commits to central repo.
+ 
