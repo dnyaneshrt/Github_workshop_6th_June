@@ -234,3 +234,26 @@ Git Branches
 #	git clone <github_repo_url(https://github.com/dnyaneshrt/DailyDrama.git)> <filename>
 
 	project will be cloned inside given file name.
+
+
+
+Assignnments:
+
+=========
+Lab Task
+=========			
+
+1) Go to git hub repository and create develop branch from main branch
+
+2) Clone git repo (by default main branch will come)
+		
+		$ git clone <url>
+		$ cd <project-dir>
+
+3) Switch from main to develop
+
+		$ git checkout develop
+
+4) Create a file and push to develop branch		
+
+5) Create pull request and merge develop branch changes to main branch.		
