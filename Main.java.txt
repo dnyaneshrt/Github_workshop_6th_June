@@ -1,4 +1,4 @@
-Git & Github
+	Git & Github
 ==========
 
 =>What is GitHub?
@@ -19,7 +19,7 @@ Git & Github
 
 
 ===================
-Enviornment setup
+	Enviornment setup
 ===================
 
 1. Create account on www.github.com (free of cost) 
@@ -40,7 +40,7 @@ Note: Configuring name and email is just one time process in git bash.
 
 
 ==========================
-What is GitHub repository?
+	What is GitHub repository?
 ==========================
 
 =>repository is a place where we can store project source code/files.
@@ -63,7 +63,7 @@ Note: In real-time DevOps team is responsible to create git repos required for t
 
 
 =================
-Git Architecture
+	Git Architecture
 =================
 
 1)  Working Tree.
@@ -89,10 +89,10 @@ working tree  ---->  Staging Area --------->  Local repo -----------> Centra Rep
 
 
 ================
-Git Commands
+	Git Commands
 ================
 
-#git init : To initalize new git repository.
+# git init : To initalize new git repository.
 
 	$ git init
 
@@ -104,9 +104,133 @@ Git Commands
 
 	$	git add <file-name>
 
+	$ git add .       Will add  all files together in staging area.  (git add .)
+
 # git commit: commit staged files at local repo.
 
 	$ git commit -m "commit message"
 
 # git push: publish local commits to central repo.
- 
+
+
+# git diff: display modified differences in working tree.
+
+	$ git diff
+
+
+# git log: To display log history.
+
+ 	$	git log -<number>/ $ git log -5 :to get history of only last 5 commits
+
+
+ #	git log --oneline :- display commit history in single line.
+
+ 	$git log --oneline -5: to get the last 5 commit history in single line
+
+ #	git restore --staged <file> : will moe back files from staged area to working tree/unstaged area.
+
+ 	$	git restore --staged Third.txt
+
+ # git restore <file>	:	 to discard changes in working directory
+
+ # git branch : list branches, point to current branch
+
+ # git branch -r :  Will show all available branches on central repo (github.com).
+
+  #	git checkout <branch-name> : will switch to given branch.
+
+ =================================
+ Q. How to remove git local commits?
+ =================================
+
+=> Git reset: Using git reset command we can remove our local commits.
+
+=> Git Reset we can do in 2 ways.
+
+	a) soft reset.
+
+	b) hard reset.
+
+=>soft reset means only local commit will be deleted but file/code changes will be still available in staging area.
+
+	$	git reset --soft HEAD~1
+
+=>hard reset means only local commit will be deleted and  file/code changes also will be deleted from working tree.
+
+	$	git reset --hard HEAD~1
+
+
+==================================
+Q. How to revert git central repo commits?
+==================================
+
+=> Using 'git revert' command we can revert code changes from central repo.
+
+	$ git revert <commit-id>
+
+Note:- After git revert execution we need to excute git push command.
+
+
+======
+Git GUI
+======
+
+=> it is desktop tool to perform git operations.
+
+=>Execute command to in working tree to open git gui.
+
+	$ git gui
+
+
+===========
+Git Branches
+===========
+
+=>12 developers working in single team.
+
+	3 Devs => ongoing devlopoment activity
+
+	3 Devs => Bug fixing
+
+	3 Devs => R & D
+
+	3	Devs => prod support related activities.
+
+=> 	whenever multiple teams 	working on same repo then project delivery will become difficult.
+
+=>	As all team members are integrating code in single repo, we cannot differnetiate team wise work	to deliver teamm work to client.
+
+	eg. we need to deliver only R&D team code changed to client today.
+
+=> To make our project delivery process simple, we need to maintain multiple branches in single GitHub repo.
+	
+	Note: OurDevOps team will decide branching strategy. (which team should use which branch)
+
+
+	Github:  main branch  (code goes on production)
+	Bitbucket: Master branch 
+
+	Branches egs:
+
+	main, feature, release, reserach, support, bug_fix.
+
+
+==================
+	Pull Request
+==================
+
+=> It is the request used to merge changes from one branch to another branch.
+
+ eg: merge feature/kunal_fixes changes to main branch request
+
+
+ =============
+ 	Git clone
+ ============
+#git clone <github_repo_url(https://github.com/dnyaneshrt/DailyDrama.git)>
+
+	creates a local copy of project that already exists remotely.
+
+#	git clone <github_repo_url(https://github.com/dnyaneshrt/DailyDrama.git)> <filename>
+
+	project will be cloned inside given file name.
