@@ -1,0 +1,343 @@
+	Git & Github
+============
+	VCS: Version Control System
+	SCM: Source Code Manager
+
+=>What is GitHub? -Github is cloud platform which is used to store developers project source code at one place using repositories(repos) concept.
+
+=>Git- to communicate with Github repos from our machine we use "Git" as client software.
+
+=>in Github, we can create repos to store our project source code. All team members/developers can connect to github repo for code integration.
+
+=>Using Github repository we can monitor/track all code changes.
+
+		-Who modified.       "your-name"
+		-When modified.    "date and time"
+		-What modified.    "code differences"
+		-Why modified.    "commit message"
+
+=> Bitbucket, Gitlab is also similler cloud platforms like GitHub.
+
+
+===================
+	Enviornment setup
+===================
+
+1. Create account on www.github.com (free of cost) 
+
+2.  Download and install 'Git client' software in your system.
+
+	URL:  https://git-scm.com/install/windows
+
+	command to check installed git version in your system:  git --version
+
+3) Open Git bash and configure your name and your email using below commands
+
+	git config --global user.name "your-name"
+
+	git config --global user.email "your-email"
+
+Note: Configuring name and email is just one time process in git bash.
+
+
+==========================
+	What is GitHub repository?
+==========================
+
+=>repository is a place where we can store project source code/files.
+
+=> For every project one seperate Github repo will be created.
+
+=>we have 2 types of repositories.
+
+1. public repo. (anybody can see your repo but account owner can choose who can commit(make code changes))
+
+2. private repo. (account owner only can see a repo details and choose who can commit)
+
+
+@@Project Github Repo URL: https://github.com/dnyaneshrt/Github_workshop_6th_June
+													 https://github.com/dnyaneshrt/Github_workshop_6th_June.git
+
+Note: In real-time DevOps/ENV team is responsible to create git repos required for the project.
+
+=> project members will connect with git repo by using above URL.
+
+
+=================
+	Git Architecture
+=================
+
+1)  Working Tree.
+
+2)  Staging Area.
+
+3) Local Repo.
+
+4) Central Repo.
+
+
+#Working Tree	:- this is your current workspace where project files are created, edited and deleted. this code directly is not eligible to commit.
+
+#Staging area	:- it is the middle layer beween your working tree directory and local repo. it represents which files are eligible to commit.
+
+#Local Repo :-	The place where your commits are permantly stored on your local machine. For each commit one unique commit is will be generated.
+
+#Central Repo :- Hosted on Github.com and used for collaboration among multiple developers.
+
+
+
+working tree  ---->  Staging Area --------->  Local repo -----------> Centra Repo
+
+
+================
+	Git Commands
+================
+
+# git init : To initalize new git repository.  it creates .git folder in working tree. .git acts like brain of git to co-ordinate with your repo.
+
+	$ git init
+
+#	git status: Display working tree status. (staged/unstaged)
+
+	$	git status
+
+# git add: Add files to staging area. (move files from working tree to staging area)
+
+	$	git add <file-name>
+
+	$ git add .       Will add  all files together in staging area.  (git add .)
+
+# git commit: commit staged files at local repo.
+
+	$ git commit -m "commit message"
+
+# git push: publish local commits to central repo.
+
+
+# git diff: display modified differences in working tree.
+
+	$ git diff
+
+
+# git log: To display log history.
+
+ 	$	git log -<number>/ $ git log -5 :to get history of only last 5 commits
+
+
+ #	git log --oneline :- display commit history in single line.
+
+ 	$git log --oneline -5: to get the last 5 commit history in single line
+
+ #	git restore --staged <file> : will moe back files from staged area to working tree/unstaged area.
+
+ 	$	git restore --staged Third.txt
+
+ # git restore <file>	:	 to discard changes in working directory
+
+ # git branch : list branches, point to current branch
+
+ # git branch -r :  Will show all available branches on central repo (github.com).
+
+ #	git checkout <branch-name> : will switch to given branch.
+
+ #	git pull : Download latest changes from central repo to working tree directly.
+
+## Note : When we use git pull there is a chance of getting merge conflicts.
+
+ =================================
+ Q. How to remove git local commits?
+ =================================
+
+=> Git reset: Using git reset command we can remove our local commits.
+
+=> Git Reset we can do in 2 ways.
+
+	a) soft reset.
+
+	b) hard reset.
+
+=>soft reset means only local commit will be deleted but file/code changes will be still available in staging area.
+
+	$	git reset --soft HEAD~1
+
+=>hard reset means only local commit will be deleted and  file/code changes also will be deleted from working tree.
+
+	$	git reset --hard HEAD~1
+
+
+==================================
+Q. How to revert git central repo commits?
+==================================
+
+=> Using 'git revert' command we can revert code changes from central repo.
+
+	$ git revert <commit-id>
+
+Note:- After git revert execution we need to excute git push command.
+
+
+======
+Git GUI
+======
+
+=> it is desktop tool to perform git operations.
+
+=>Execute command to in working tree to open git gui.
+
+	$ git gui
+
+
+===========
+Git Branches
+===========
+
+=>12 developers working in single team.
+
+	3 Devs => ongoing devlopoment activity
+
+	3 Devs => Bug fixing
+
+	3 Devs => R & D
+
+	3	Devs => prod support related activities.
+
+=> 	whenever multiple teams 	working on same repo then project delivery will become difficult.
+
+=>	As all team members are integrating code in single repo, we cannot differnetiate team wise work	to deliver teamm work to client.
+
+	eg. we need to deliver only R&D team code changed to client today.
+
+=> To make our project delivery process simple, we need to maintain multiple branches in single GitHub repo.
+	
+	Note: OurDevOps team will decide branching strategy. (which team should use which branch)
+
+
+	Github:  main branch  (code goes on production)
+	Bitbucket: Master branch 
+
+	Branches egs:
+
+	main, feature, release, reserach, support, bug_fix.
+
+
+==================
+	Pull Request
+==================
+
+=> It is the request used to merge changes from one branch to another branch in central repo.
+
+ eg: merge feature/kunal_fixes changes to main branch request
+
+
+ =============
+ 	Git clone
+ ============
+#git clone <github_repo_url(https://github.com/dnyaneshrt/DailyDrama.git)>
+
+	creates a local copy of project that already exists remotely.
+
+#	git clone <github_repo_url(https://github.com/dnyaneshrt/DailyDrama.git)> <filename>
+
+	project will be cloned inside given file name.
+
+
+
+========================================
+How to push entire project to git hub ?
+=========================================
+
+Step-1 :: Create new github repository. It will show git commands like below
+
+```
+echo "# 302-SB-App" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/ashokitschool/302-SB-App.git
+git push -u origin main
+
+```
+
+Note: Instead of adding only 'git add README.md' file to staging area we can add all files by using 'git add .' like below
+
+
+echo "# Infeanet_2026" >> README.md
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/dnyaneshrt/Infeanet_2026.git
+git push -u origin main
+
+
+Step-2 :: Execute above all commands in project directory then our project files will be pushed to github central repo.
+
+=========
+Lab Task
+=========			
+
+1) Go to git hub repository and create develop branch from main branch
+
+2) Clone git repo (by default main branch will come)
+		
+		$ git clone <url>
+		$ cd <project-dir>
+
+3) Switch from main to develop
+
+		$ git checkout develop
+
+4) Create a file and push to develop branch		
+
+5) Create pull request and merge develop branch changes to main branch.		
+
+
+============================
+How to merge commits in local repo
+============================
+
+=> By using 'Git merge' command we can merge changes from one branch to another branch in local repo.
+
+#create new branch
+	$git branch feature/ag123_bug_fix
+
+# create ag123.txt file and commit
+	$touch ag123.txt
+	$git add ag123.txt
+	$git commit -m 'ag123.txt file added to fix bugs'
+
+#switch to main branch
+
+	$git checkout main
+
+#merge feature branch changes into main
+
+	$git merge feature/ag123_bug_fix
+
+
+============
+Git cherry-pick
+============
+
+=> When we use 'git merge' command, by deafault all commits will merge from one branch to another branch.
+
+=> If we have requirement to merge specific commit from one branch to another branch then we use 'git cherry-pick'
+
+	$git checkout -b <brach-name> - will create branch and switch
+	git checkout -b feature/ronak_module
+
+	$git cherry-pick <commit-id>
+
+	$git cherry-pick <commid-id> <commit-id> ...  <commit-id>
+
+	$git cherry-pick <start-commit-id>^.. <end-commit-id>
+
+
+=========
+	git fork?
+=========
+
+=>it is used to copy others repos into your github account.
+
+Note: Whenever we want to work with open source projects then we use git fork option.
